@@ -50,8 +50,8 @@ li {
     height: 60px;
     align-items: center;
     justify-content: center;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 25px;
+    padding-right: 25px;
     font-size: 18px;
 }
 
@@ -92,7 +92,7 @@ li {
 }
 
 .adresse, #adresse{
-    width: 310px;
+    width: 350px;
     font-weight: bold;
 }
 
