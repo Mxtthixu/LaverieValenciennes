@@ -1,0 +1,21 @@
+//Adresse - Quantité - Prix - Poids - Prix/Poids
+
+let data = [["31 Rue des Récollets", "1", "3€", "6kg", "0.50€/kg"]
+, ["31 Rue des Récollets", "2", "3.8€", "9kg", "0.42€/kg"]
+, ["31 Rue des Récollets", "1", "5.5€", "15kg", "0.37€/kg"]
+, ["Carrefour, Av. Henri Matisse", "2", "2€", "8kg", "0.25€/kg"]
+, ["Carrefour, Av. Henri Matisse", "3", "7€", "18kg", "0.39€/kg"]
+, ["Auchan, 79 Av. du Général Horne", "1", "5€", "9kg", "0.56€/kg"]
+, ["Auchan, 79 Av. du Général Horne", "1", "12€", "20kg", "0.60€/kg"]
+, ["3 P Rue des Bessemers", "4", "4€", "9kg", "0.44€/kg"]
+, ["3 P Rue des Bessemers", "2", "8€", "14kg", "0.57€/kg"]
+, ["3 P Rue des Bessemers", "1", "10€", "20kg", "0.50€/kg"]
+, ["3 P Rue des Bessemers", "1", "14€", "27kg", "0.52€/kg"]
+, ["Supeco, 860 Bd Henri Harpignies", "1", "5€", "8kg", "0.63€/kg"]
+, ["Supeco, 860 Bd Henri Harpignies", "1", "10€", "18kg", "0.56€/kg"]
+, ["Auchan, 59 Av. de Verdun", "1", "5€", "9kg", "0.56€/kg"]
+, ["Auchan, 59 Av. de Verdun", "1", "12€", "20kg", "0.60€/kg"]
+]
+
+let valenciennes = ["31 Rue des Récollets", "Auchan, 79 Av. du Général Horne", "Supeco, 860 Bd Henri Harpignies", "Auchan, 59 Av. de Verdun"]
+let aulnoy = ["Carrefour, Av. Henri Matisse", "3 P Rue des Bessemers"]

@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-width: 1100px;
+}
+
+header {
+    height: 80px;
+    background: #067fc0;
+    width: 100%;
+    position:sticky;
+    top: 0;
+}
+
+.container {
+    display: flex;
+    align-items: center;      /* Centre verticalement */
+    width: 1100px;
+    margin: auto;
+    height: 100%;
+}
+
+.logo {
+    height: 70px;
+    margin-right: 27px;
+    cursor:pointer;
+}
+
+.titres {
+    padding: 15px 27px;
+    color: #FFEAEA;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+ul {
+    display: flex;
+    width: 100%;
+    border-top: 0.1px solid grey;
+    transition: transform 400ms 100ms cubic-bezier(0,-1.41,1,2.05);
+    &:hover:not(#categorie) {
+        transform:scale(1.1);
+        border: 0.1px solid grey;
+        font-size: 20px;
+    }
+}
+
+li {
+    display: flex;
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 18px;
+}
+
+.quantite, #quantite {
+    float: right;
+    margin-left: auto;
+    justify-content: center;
+    width: 60px;
+}
+
+.duree, #duree {
+    float: right;
+    margin-left: auto;
+    justify-content: center;
+    width: 60px;
+}
+
+.prixkilo, #prixkilo {
+    float: right;
+    justify-content: center;
+    width: 140px;
+}
+
+.prix, #prix {
+    float: right;
+    justify-content: center;
+    width: 60px;
+}
+
+.poids, #poids {
+    float: right;
+    justify-content: center;
+    width: 50px;
+}
+
+.numero, #numero {
+    width: 50px;
+    font-size: 22px;
+}
+
+.adresse, #adresse{
+    width: 290px;
+}
+
+.sort-button {
+    height: 20px;
+    width: 20px;
+    background: grey;
+    margin-left: 10px;
+}
+
+.sort-button:hover, .info:hover{
+    background: #001;
+    cursor: pointer;
+}
+
+.titres:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.categorie:hover {
+    cursor: pointer;
+    color:red;
+}
+
+.categorie {
+    color:black;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.villes {
+    font-size:20px;
+}
+
+input {
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.info {
+    background:white;
+    position:relative; 
+    top:40px; 
+    right:70px; 
+    display:none
+}
