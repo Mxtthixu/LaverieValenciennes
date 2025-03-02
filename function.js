@@ -78,7 +78,8 @@ function updateAllLists(liste) {
   }
 
   for (let i = 0; i < localisation.length; i++) {
-      localisation[i].innerHTML = sortedLocalisation[i]
+      let j = 0
+      localisation[i].textContent = sortedLocalisation[i]
       quantite[i].textContent = sortedQuantite[i];
       poids[i].textContent = sortedPoids[i] + "kg";
       prixAuKilo[i].textContent = sortedPrixAuKilo[i] + "€/kg";
@@ -92,6 +93,13 @@ function updateAllLists(liste) {
         ligne[i].id = "aulnoy"
         localisation[i].style.color = "green"
       }
+
+      while (laverie[j][0] != sortedLocalisation[i]) {
+        j++
+      }
+
+      localisation[i].innerHTML += `<details><summary><img src='info.svg' class='info-button'></summary><div class='info'>
+      <div>${laverie[j][1]}</div><div>${laverie[j][2]}</div><div>${laverie[j][3]}</div><div>${laverie[j][4]}</div></div></details>`
   }
 }
 
