@@ -22,6 +22,7 @@ const ligne = document.querySelectorAll(".donnee")
 
 let checkboxvalenciennes = document.querySelector(".checkboxvalenciennes")
 let checkboxaulnoy = document.querySelector(".checkboxaulnoy")
+let checkboxbeuvrages = document.querySelector(".checkboxbeuvrages")
 
 button[0].addEventListener("click", function() {
   updateAllLists(listePrix)
@@ -64,6 +65,22 @@ checkboxaulnoy.addEventListener("change", function() {
   } else {
     for (i=0; i<ligne.length; i++) {
       if (ligne[i].id === "aulnoy") {
+        ligne[i].style.display = "none"
+      }
+    }
+  } classement()
+})
+
+checkboxbeuvrages.addEventListener("change", function() {
+  if (checkboxbeuvrages.checked) {
+    for (i=0; i<ligne.length; i++) {
+      if (ligne[i].id === "beuvrages") {
+        ligne[i].style.display = "flex"
+      }
+    }
+  } else {
+    for (i=0; i<ligne.length; i++) {
+      if (ligne[i].id === "beuvrages") {
         ligne[i].style.display = "none"
       }
     }

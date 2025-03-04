@@ -13,7 +13,7 @@ header {
     width: 100%;
     position:sticky;
     top: 0;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 .container {
@@ -93,7 +93,7 @@ li {
 }
 
 .adresse, #adresse{
-    width: 350px;
+    width: 340px;
     font-weight: bold;
 }
 
@@ -155,4 +155,8 @@ input {
 
 details summary {
     list-style: none;
+}
+
+img:not(.sort-button) {
+    margin-right: 5px;
 }

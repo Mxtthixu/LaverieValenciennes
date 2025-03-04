@@ -93,13 +93,24 @@ function updateAllLists(liste) {
         ligne[i].id = "aulnoy"
         localisation[i].style.color = "green"
       }
-
-      while (laverie[j][0] != sortedLocalisation[i]) {
-        j++
+      if (beuvrages.includes(sortedLocalisation[i])) {
+        ligne[i].id = "beuvrages"
+        localisation[i].style.color = "orangered"
       }
 
-      localisation[i].innerHTML += `<details><summary><img src='info.svg' class='info-button'></summary><div class='info'>
-      <div>${laverie[j][1]}</div><div>${laverie[j][2]}</div><div>${laverie[j][3]}</div><div>${laverie[j][4]}</div></div></details>`
+      try { 
+        while (laverie[j][0] != sortedLocalisation[i]) {
+          j++
+        }
+      } catch {
+        console.log(sortedLocalisation)
+        console.log(`Il manque : "${sortedLocalisation[i]}" dans le tableau "laverie" dans le fichieir "dataLaverie"`)
+      }
+
+      localisation[i].innerHTML += `<details><summary><img src='info.svg' class='info-button'></summary><div class="info">
+      <div><img src="position.svg">Ville : ${laverie[j][1]}</div><div><img src="clock.svg">Ouvert ${laverie[j][2]}</div>
+      <div style="font-weight:bold; margin-top: 10px; margin-bottom: 10px; text-decoration:underline;">Services :</div>
+      <div><img src="wash.svg">${laverie[j][3]}</div><div><img src="dry.svg"">${laverie[j][4]}</div></div></details>`
   }
 }
 

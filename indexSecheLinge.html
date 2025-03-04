@@ -3,54 +3,60 @@
     <head>
         <title>Laverie Valenciennes</title>
         <link rel="stylesheet" href="style.css">
-        <script class="data" src="dataSecheLinge.js" defer></script>
-        <script src="lignerankSeche.js" defer></script>
+        <script src="dataSecheLinge.js" ></script>
+        <script src="dataLaverie.js"></script>
+        <script src="lignerank.js" defer></script>
         <script src="function.js" defer></script>
         <script src="script.js" defer></script>
     </head>
 
     <body>
-        <header style="margin-bottom: 10px">
+        <header>
             <div class="container">
-                <img alt="Logo" src="logoV2.png" class="logo" stlye="margin-left: 20px;">
-                <a class="titres" style="text-decoration:underline";>Classement</a>
-                <a class="titres">Trouver une Laverie</a>
-                <a class="titres">Statut Machines</a>
+                <img alt="Logo" src="logoV2.png" class="logo" style="margin-left: 20px;" title="LOGO">
+                <a class="titres" style="text-decoration:underline">Classement</a>
+                <a class="titres" href="trouverLaverie.html">Trouver une Laverie</a>
                 <a class="titres" style="margin-left: auto; padding-right:0; margin-right: 20px; font-size:16px">EN</a>
             </div>
         </header>
         <main style="display: flex; justify-content: center; margin-bottom: 50px">
             <div style="border: 0.1px solid grey; width:1100px">
                 <div style="display: flex; justify-content: space-between; margin-top: 20px; height:40px;">
-                    <span style="width:330px; margin-left:30px; font-size: 24px; font-weight: bold;">Classement V1</span>
-                    <span style="color: #999999; ;margin-left: auto; margin-right:30px;">*Février 2025</span>
+                    <span style="width:330px; margin-left:30px; font-size: 24px; font-weight: bold;">Classement des Machines V1</span>
+                    <span style="color: #999999; ;margin-left: auto; margin-right:30px;" title="J'ai fait la maj récemment tkt">*Mars 2025</span>
                 </div>
-                <div style="height:40px;">
-                    <a href="index.html" class="categorie" style="width:330px; margin-left:30px;">Lave Linge</a>
-                    <a class="categorie" style="margin-left:60px; color:red; font-weight: bold;">Sèche Linge</a>
+                <div style="height:40px; display:flex;">
+                    <span>
+                        <a href="index.html" class="categorie" style="width:330px; margin-left:30px;">Lave Linge</a>
+                        <a class="categorie" style="margin-left:60px; color:red;">Sèche Linge</a>
+                    </span>
+                    <span style="margin-left: auto; margin-right:30px; font-size: 20px;">
+                        <input class="checkboxvalenciennes" type="checkbox" style="height:20px; width: 20px" checked><span class="villes" style="color:blue">Valenciennes</span>
+                        <input class="checkboxaulnoy" type="checkbox" checked style="height:20px; width: 20px; background:green"><span class="villes" style="color:green;">Aulnoy-lez-Valenciennes</span>
+                    </span>
                 </div>
                 <div>
-                    <ul style="list-style-type: none; background: #c0e4f4;">
+                    <ul  id="categorie" style="list-style-type: none; background: #c0e4f4;">
                         <li id="numero" style="margin-left: 30px; font-weight: bold;">Classement</li>
                         <li id="adresse" style="font-weight: bold;">Addresses</li>
-                        <li id="duree" style="font-weight: bold;">Durée</li>
-                        <li id="prix" style="font-weight: bold;">Prix<img src="sort-button.png" class="sort-button" alt="sort-button"></li>
-                        <li id="poids" style="font-weight: bold;">Poids<img src="sort-button.png" class="sort-button" alt="sort-button"></li>
-                        <li id="prixkilo" style="margin-right: 30px; font-weight: bold;">Prix au Kilo<img src="sort-button.png" class="sort-button" alt="sort-button"></li>
+                        <li id="quantite" style="font-weight: bold;" title="Nombre d'appareils disponibles">Quantité</li>
+                        <li id="prix" style="font-weight: bold;">Prix<img src="sort-button.png" class="sort-button" alt="sort-button" title="Tri en fonction du prix"></li>
+                        <li id="poids" style="font-weight: bold;">Poids<img src="sort-button.png" class="sort-button" alt="sort-button" title="Tri en fonction du poids"></li>
+                        <li id="prixkilo" style="margin-right: 30px; font-weight: bold;">Prix au Kilo<img src="sort-button.png" class="sort-button" alt="sort-button" title="Tri en fonction du prix au kilo"></li>
                     </ul>
                     <div class="lignerank">
 
                     </div>
                     <div style="color: #999999; padding-left:30px; padding-top: 20px; margin-bottom: 15px; border-top: 0.1px solid grey;">
                         * Ce site recence toutes les laveries de Valenciennes et de ses environs.
-                        <div>* Vous pouvez m'envoyer des demandes de modifications via le formulaire.</div>
+                        <div>* Vous pouvez m'envoyer des demandes de modifications via le mail : laverievalenciennes@gmail.com.</div>
                         
                     </div>
                 </div>
             </div>
         </main>
         <footer style="display: flex; justify-content: center; color: #999999;">
-            Laverie Valenciennes, Email: ???
+            Laverie Valenciennes, Email: laverievalenciennes@gmail.com
         </footer>
     </body>
 </html>
