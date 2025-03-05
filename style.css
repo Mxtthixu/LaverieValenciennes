@@ -119,7 +119,8 @@ li {
 
 .titres:hover {
     cursor: pointer;
-    text-decoration: underline;
+    text-decoration:underline 3px;
+    text-underline-offset: 10px;
 }
 
 .categorie:hover {
