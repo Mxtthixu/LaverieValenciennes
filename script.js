@@ -4,6 +4,10 @@ let prix = document.querySelectorAll(".prix")
 let poids = document.querySelectorAll(".poids")
 let prixAuKilo = document.querySelectorAll(".prixkilo")
 
+let titleprix = document.querySelector("#prix")
+let titlepoids = document.querySelector("#poids")
+let titleprixAuKilo = document.querySelector("#prixkilo")
+
 let tableau = [prix, poids, prixAuKilo]
 
 let button = document.querySelectorAll(".sort-button")
@@ -14,7 +18,7 @@ let listePrix = liste(data)[2]
 let listePoids = liste(data)[3]
 let listePrixAuKilo = liste(data)[4]
 
-let ordre = 1
+let ordre = 0
 
 let numero = document.querySelectorAll(".numero")
 
@@ -27,16 +31,25 @@ let checkboxbeuvrages = document.querySelector(".checkboxbeuvrages")
 button[0].addEventListener("click", function() {
   updateAllLists(listePrix)
   colorRank(0)
+  titleprix.style.color = "red"
+  titlepoids.style.color = "black"
+  titleprixAuKilo.style.color = "black"
 })
 
 button[1].addEventListener("click", function() {
   updateAllLists(listePoids)
   colorRank(1)
+  titleprix.style.color = "black"
+  titlepoids.style.color = "red"
+  titleprixAuKilo.style.color = "black"
 })
 
 button[2].addEventListener("click", function() {
   updateAllLists(listePrixAuKilo)
   colorRank(2)
+  titleprix.style.color = "black"
+  titlepoids.style.color = "black"
+  titleprixAuKilo.style.color = "red"
 })
 
 checkboxvalenciennes.addEventListener("change", function() {
@@ -88,5 +101,8 @@ checkboxbeuvrages.addEventListener("change", function() {
 })
 
 updateAllLists(listePrix)
+titleprix.style.color = "red"
+titlepoids.style.color = "black"
+titleprixAuKilo.style.color = "black"
 colorRank(0)
 classement()

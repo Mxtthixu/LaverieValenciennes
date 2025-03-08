@@ -1,5 +1,5 @@
 function retirerSymboles(chaine) {
-    return chaine.replace(/\€\/kg|\€|kg/g, '').trim();
+    return chaine.replace(/\€\/min|\€|kg/g, '').trim();
   }
   
 function liste(element) {
@@ -82,7 +82,7 @@ function updateAllLists(liste) {
       localisation[i].textContent = sortedLocalisation[i]
       quantite[i].textContent = sortedQuantite[i];
       poids[i].textContent = sortedPoids[i] + "kg";
-      prixAuKilo[i].textContent = sortedPrixAuKilo[i] + "€/kg";
+      prixAuKilo[i].textContent = sortedPrixAuKilo[i] + "€/min";
       prix[i].textContent = sortedPrix[i] + "€";
 
       try { if (valenciennes.includes(sortedLocalisation[i])) {
@@ -108,12 +108,14 @@ function updateAllLists(liste) {
         console.log(sortedLocalisation)
         console.log(`Il manque : "${sortedLocalisation[i]}" dans le tableau "laverie" dans le fichieir "dataLaverie"`)
       }
-
-      localisation[i].innerHTML += `<details><summary><img src='info.svg' class='info-button'></summary><div class="info">
-      <div><img src="position.svg" style="background:grey">Ville : ${laverie[j][1]}</div><div><img src="clock.svg" style="background:grey">
-      Ouvert ${laverie[j][2]}</div><div style="font-weight:bold; margin-top: 10px; margin-bottom: 10px; text-decoration:underline;">Services :</div>
-      <div><img src="wash.svg" style="background:grey">${laverie[j][3]}</div><div><img src="dry.svg" style="background:grey">${laverie[j][4]}</div>
-      </div></details>`   // crée les détails de chaque laveries
+      try {
+        localisation[i].innerHTML += `<details><summary><img src='info.svg' class='info-button'></summary><div class="info">
+        <div><img src="position.svg">Ville : ${laverie[j][1]}</div><div><img src="clock.svg">Ouvert ${laverie[j][2]}</div>
+        <div style="font-weight:bold; margin-top: 10px; margin-bottom: 10px; text-decoration:underline;">Services :</div>
+        <div><img src="wash.svg">${laverie[j][3]}</div><div><img src="dry.svg"">${laverie[j][4]}</div></div></details>`   // crée les détails de chaque laveries  
+      } catch {
+        console.log("Il manque des valeurs dans : dataLaverie")
+      }
   }
 }
 
