@@ -22,11 +22,19 @@ let ordre = 0
 
 let numero = document.querySelectorAll(".numero")
 
-const ligne = document.querySelectorAll(".donnee")
+const ligne = document.querySelectorAll(".donnee")    // Sélectionne toutes les lignes de rank
 
 let checkboxvalenciennes = document.querySelector(".checkboxvalenciennes")
 let checkboxaulnoy = document.querySelector(".checkboxaulnoy")
-let checkboxbeuvrages = document.querySelector(".checkboxbeuvrages")
+let checkboxbeuvrages = document.querySelector(".checkboxbeuvrages")   // Pour les checkbox de choix de ville
+
+let form = document.querySelector('form')
+let recherche = document.getElementById("recherche").value   // prend les éléments dans recherche
+
+let url = new URL(window.location.href); // Récupère l'URL actuelle
+let params = new URLSearchParams(url.search); // Récupère les paramètres de l'URL
+
+let colorId = 0  // Indice permettant de récupérer la variable dans colorRank
 
 button[0].addEventListener("click", function() {
   updateAllLists(listePrix)
@@ -34,6 +42,7 @@ button[0].addEventListener("click", function() {
   titleprix.style.color = "red"
   titlepoids.style.color = "black"
   titleprixAuKilo.style.color = "black"
+  colorId = 0
 })
 
 button[1].addEventListener("click", function() {
@@ -42,6 +51,7 @@ button[1].addEventListener("click", function() {
   titleprix.style.color = "black"
   titlepoids.style.color = "red"
   titleprixAuKilo.style.color = "black"
+  colorId = 1
 })
 
 button[2].addEventListener("click", function() {
@@ -50,6 +60,7 @@ button[2].addEventListener("click", function() {
   titleprix.style.color = "black"
   titlepoids.style.color = "black"
   titleprixAuKilo.style.color = "red"
+  colorId = 2
 })
 
 checkboxvalenciennes.addEventListener("change", function() {
@@ -100,9 +111,33 @@ checkboxbeuvrages.addEventListener("change", function() {
   } classement()
 })
 
-updateAllLists(listePrix)
-titleprix.style.color = "red"
-titlepoids.style.color = "black"
-titleprixAuKilo.style.color = "black"
-colorRank(0)
-classement()
+form.addEventListener("input", (event) => {
+  event.preventDefault()
+  colorRank(colorId)
+  recherche = document.getElementById("recherche").value   // prend les éléments dans recherche
+  if (recherche.length >= 2) {
+    highlight()
+    changeURL()
+  } else {
+    changeURL()
+  }
+})
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Récupérer l'URL actuelle
+  let url = new URL(window.location.href);
+
+  // Récupérer les paramètres de l'URL
+  let params = new URLSearchParams(url.search);
+  recherche = params.get('recherche')
+  recherche = decodeURIComponent(recherche);
+  highlight()
+  changeURL()
+})
+
+updateAllLists(listePrix)   // Trier au démarrage
+titleprix.style.color = "red"  // Mettre les couleurs au démarrage
+titlepoids.style.color = "black"   //  Pareil
+titleprixAuKilo.style.color = "black"   // Pareil
+colorRank(0)   //   Met les couleurs de classement
+classement()   // met les numéros

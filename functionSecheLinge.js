@@ -80,7 +80,8 @@ function updateAllLists(liste) {
   for (let i = 0; i < localisation.length; i++) {
       let j = 0
       localisation[i].textContent = sortedLocalisation[i]
-      quantite[i].textContent = sortedQuantite[i];
+      console.log(sortedQuantite[i])
+      quantite[i].textContent = sortedQuantite[i]
       poids[i].textContent = sortedPoids[i] + "kg";
       prixAuKilo[i].textContent = sortedPrixAuKilo[i] + "€/min";
       prix[i].textContent = sortedPrix[i] + "€";
@@ -144,4 +145,18 @@ function classement () {
       j++
     }
 }
+}
+
+function highlight () {
+  for (i=0; i<localisation.length; i++) {
+    if (localisation[i].textContent.includes(recherche)) {
+      ligne[i].style.background = "rgb(254, 254, 0, 0.5)"
+    } 
+  }
+}
+
+function changeURL () {
+  params.set('recherche', recherche); 
+  url.search = params.toString()
+  window.history.pushState({}, '', url)
 }

@@ -82,8 +82,12 @@ function updateAllLists(liste) {
       localisation[i].textContent = sortedLocalisation[i]
       quantite[i].textContent = sortedQuantite[i];
       poids[i].textContent = sortedPoids[i] + "kg";
-      prixAuKilo[i].textContent = sortedPrixAuKilo[i] + "€/kg";
       prix[i].textContent = sortedPrix[i] + "€";
+      if (window.location.href.includes("SecheLinge")) {
+        prixAuKilo[i].textContent = sortedPrixAuKilo[i] + "€/min";
+      } else {
+        prixAuKilo[i].textContent = sortedPrixAuKilo[i] + "€/kg";
+      }
 
       try { if (valenciennes.includes(sortedLocalisation[i])) {
         ligne[i].id = "valenciennes"
@@ -142,4 +146,18 @@ function classement () {
       j++
     }
 }
+}
+
+function highlight () {
+  for (i=0; i<localisation.length; i++) {
+    if (localisation[i].textContent.includes(recherche)) {
+      ligne[i].style.background = "rgb(254, 254, 0, 0.5)"
+    } 
+  }
+}
+
+function changeURL () {
+  params.set('recherche', recherche); 
+  url.search = params.toString()
+  window.history.pushState({}, '', url)
 }

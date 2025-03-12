@@ -17,16 +17,19 @@
                 <img alt="Logo" src="logoV2.png" class="logo" style="margin-left: 20px;" title="LOGO">
                 <a class="titres" style="text-decoration:underline 3px; text-underline-offset: 10px;">Classement</a>
                 <a class="titres" href="trouverLaverie.html">Trouver une Laverie</a>
-                <a class="titres" style="margin-left: auto; padding-right:0; margin-right: 20px; font-size:16px">FR</a>
+                <a class="titres" style="margin-left: auto; padding-right:0; margin-right: 20px; font-size:16px" title="Flemme de faire plusieurs langues déso">FR</a>
             </div>
         </header>
         <main style="display: flex; justify-content: center; margin-bottom: 50px">
             <div style="border: 0.1px solid grey; width:1100px">
                 <div style="display: flex; justify-content: space-between; margin-top: 20px; height:40px;">
                     <span style="width:400px; margin-left:30px; font-size: 24px; font-weight: bold;">Classement des Machines V1</span>
+                    <form type="text" style="margin-bottom: 90px; display: inline;">
+                        <input type="text" placeholder="Recherche d'une laverie" id="recherche" minlength="2"></textarea>
+                    </form>
                     <span style="color: #999999; ;margin-left: auto; margin-right:30px;" title="J'ai fait la maj récemment tkt">*Mars 2025</span>
                 </div>
-                <div style="height:40px; display:flex;">
+                <div style="height:40px; display:flex; margin-top: 20px;">
                     <span>
                         <a class="categorie" style="width:330px; margin-left:30px; color:red; font-weight: bold;">Lave Linge</a>
                         <a href="indexSecheLinge.html" class="categorie" style="margin-left:60px;">Sèche Linge</a>
@@ -44,7 +47,7 @@
                         <li id="quantite" style="font-weight: bold;" title="Nombre d'appareils disponibles">Quantité</li>
                         <li id="prix" style="font-weight: bold;">Prix<img src="sort-button.png" class="sort-button" alt="sort-button" title="Tri en fonction du prix"></li>
                         <li id="poids" style="font-weight: bold;">Poids<img src="sort-button.png" class="sort-button" alt="sort-button" title="Tri en fonction du poids"></li>
-                        <li id="prixkilo" style="margin-right: 30px; font-weight: bold;">Prix au Kilo<img src="sort-button.png" class="sort-button" alt="sort-button" title="Tri en fonction du prix au kilo"></li>
+                        <li id="prixkilo" style="margin-right: 30px; font-weight: bold;">Prix/Kg<img src="sort-button.png" class="sort-button" alt="sort-button" title="Tri en fonction du prix au kilo"></li>
                     </ul>
                     <div class="lignerank">
 

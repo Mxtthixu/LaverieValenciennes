@@ -163,3 +163,14 @@ details summary {
 img:not(.sort-button) {
     margin-right: 5px;
 }
+
+footer {
+    margin-bottom: 50px;
+}
+
+input {
+    text-align: center;
+    border-radius: 15px;
+    height: 30px; 
+    width: 200px;
+}
