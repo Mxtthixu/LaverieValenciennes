@@ -117,7 +117,7 @@ function updateAllLists(liste) {
       <div><img src="position.svg" style="background:grey">Ville : ${laverie[j][1]}</div><div><img src="clock.svg" style="background:grey">
       Ouvert ${laverie[j][2]}</div><div style="font-weight:bold; margin-top: 10px; margin-bottom: 10px; text-decoration:underline;">Services :</div>
       <div><img src="wash.svg" style="background:grey">${laverie[j][3]}</div><div><img src="dry.svg" style="background:grey">${laverie[j][4]}</div>
-      </div></details>`   // crée les détails de chaque laveries
+      <div><img src="check.svg" style="background:grey">Statut Machine : <a target="_blank" href=${laverie[j][5]}>lien</a></div></div></details>`   // crée les détails de chaque laveries
   }
 }
 
@@ -151,8 +151,10 @@ function classement () {
 function highlight () {
   for (i=0; i<localisation.length; i++) {
     if (localisation[i].textContent.includes(recherche)) {
-      ligne[i].style.background = "rgb(254, 254, 0, 0.5)"
-    } 
+      ligne[i].style.display = "flex"
+    } else {
+      ligne[i].style.display = "none"
+    }
   }
 }
 
@@ -160,4 +162,27 @@ function changeURL () {
   params.set('recherche', recherche); 
   url.search = params.toString()
   window.history.pushState({}, '', url)
+}
+
+function numLaverieVille () {
+  let v1 = 0
+  let v2 = 0
+  let v3 = 0
+  for (i=0; i<liste.length; i++) {
+    if (localisation[i].textContent.includes("Valenciennes")) {
+      v1++    ///   A rebosser pcq ça fonctionne pas
+      console.log(localisation[i].textContent)
+    }
+    if (localisation[i].textContent.includes("Aulnoy-lez-Valenciennes")) {
+      v2++
+      console.log(localisation[i].textContent)
+    }
+    if (localisation[i].textContent.includes("Beuvrages")) {
+      v3++
+      console.log(localisation[i].textContent)
+    }
+  }
+  textCheckbox[0].textContent += v1
+  textCheckbox[1].innerHTML +=  v2
+  textCheckbox[2].innerHTML += v3
 }

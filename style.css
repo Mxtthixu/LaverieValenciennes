@@ -103,6 +103,7 @@ li {
     width: 20px;
     background: grey;
     margin-left: 10px;
+    transform: scaleX(1);
 }
 
 .info-button {
@@ -173,4 +174,5 @@ input {
     border-radius: 15px;
     height: 30px; 
     width: 400px;
+    font-size: 20px;
 }
